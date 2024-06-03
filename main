@@ -1,0 +1,149 @@
+-- Create a ScreenGui
+local gui = Instance.new("ScreenGui")
+gui.IgnoreGuiInset = true -- Ensures the GUI is not affected by safe zones
+gui.Parent = game.Players.LocalPlayer.PlayerGui
+
+-- Create a TextButton to toggle the visibility of the exploit GUI
+local toggleButton = Instance.new("TextButton")
+toggleButton.Text = "Filo"
+toggleButton.Size = UDim2.new(0, 100, 0, 30)
+toggleButton.Position = UDim2.new(0, 10, 0, 10) -- Top-left corner with some padding
+toggleButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- White
+toggleButton.BorderSizePixel = 2
+toggleButton.BorderColor3 = Color3.fromRGB(0, 0, 0) -- Black
+toggleButton.Parent = gui
+
+-- Create a TextButton for killing the GUI
+local killButton = Instance.new("TextButton")
+killButton.Text = "Kill GUI"
+killButton.Size = UDim2.new(0, 100, 0, 30)
+killButton.Position = UDim2.new(0.5, -50, 1, -40) -- Centered at the bottom
+killButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- White
+killButton.BorderSizePixel = 2
+killButton.BorderColor3 = Color3.fromRGB(0, 0, 0) -- Black
+killButton.Parent = gui
+
+-- Create a TextButton for executing the loadstring
+local executeButton = Instance.new("TextButton")
+executeButton.Text = "Execute Loadstring"
+executeButton.Size = UDim2.new(0, 150, 0, 30)
+executeButton.Position = UDim2.new(0.5, -75, 0, 50) -- Centered horizontally, 50 pixels below the top
+executeButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- White
+executeButton.BorderSizePixel = 2
+executeButton.BorderColor3 = Color3.fromRGB(0, 0, 0) -- Black
+executeButton.Parent = gui
+
+-- Create sliders for adjusting speed and jump power
+local speedSlider = Instance.new("TextButton")
+speedSlider.Text = ""
+speedSlider.Size = UDim2.new(0, 100, 0, 5)
+speedSlider.Position = UDim2.new(0.5, -50, 0.5, -30)
+speedSlider.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- White
+speedSlider.BorderSizePixel = 2
+speedSlider.BorderColor3 = Color3.fromRGB(0, 0, 0) -- Black
+speedSlider.AutoButtonColor = false
+speedSlider.Visible = false
+speedSlider.Parent = gui
+
+local jumpSlider = Instance.new("TextButton")
+jumpSlider.Text = ""
+jumpSlider.Size = UDim2.new(0, 100, 0, 5)
+jumpSlider.Position = UDim2.new(0.5, -50, 0.5, 10)
+jumpSlider.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- White
+jumpSlider.BorderSizePixel = 2
+jumpSlider.BorderColor3 = Color3.fromRGB(0, 0, 0) -- Black
+jumpSlider.AutoButtonColor = false
+jumpSlider.Visible = false
+jumpSlider.Parent = gui
+
+-- Create a TextLabel for speed
+local speedLabel = Instance.new("TextLabel")
+speedLabel.Text = "Speed: 50"
+speedLabel.Size = UDim2.new(0, 100, 0, 20)
+speedLabel.Position = UDim2.new(0.5, -50, 0.5, -50)
+speedLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- White
+speedLabel.BorderSizePixel = 0
+speedLabel.Parent = gui
+
+-- Create a TextLabel for jump power
+local jumpLabel = Instance.new("TextLabel")
+jumpLabel.Text = "Jump: 50"
+jumpLabel.Size = UDim2.new(0, 100, 0, 20)
+jumpLabel.Position = UDim2.new(0.5, -50, 0.5, 0)
+jumpLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- White
+jumpLabel.BorderSizePixel = 0
+jumpLabel.Parent = gui
+
+-- Function to delete all GUI elements
+local function deleteAllGUI()
+    gui:Destroy()
+end
+
+-- Connect the function to the kill button's MouseButton1Click event
+killButton.MouseButton1Click:Connect(deleteAllGUI)
+
+-- Function to toggle the visibility of the sliders
+local function toggleSliders()
+    speedSlider.Visible = not speedSlider.Visible
+    jumpSlider.Visible = not jumpSlider.Visible
+end
+
+-- Connect the function to the toggle button
+-- Connect the function to the toggle button's MouseButton1Click event
+toggleButton.MouseButton1Click:Connect(toggleSliders)
+
+-- Function to update the speed label
+local function updateSpeedLabel(value)
+    speedLabel.Text = "Speed: " .. tostring(value)
+end
+
+-- Function to update the jump label
+local function updateJumpLabel(value)
+    jumpLabel.Text = "Jump: " .. tostring(value)
+end
+
+-- Function to adjust the player's speed
+local function adjustSpeed(value)
+    local speed = tonumber(value)
+    if speed then
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speed
+        updateSpeedLabel(speed)
+    end
+end
+
+-- Function to adjust the player's jump power
+local function adjustJumpPower(value)
+    local jumpPower = tonumber(value)
+    if jumpPower then
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = jumpPower
+        updateJumpLabel(jumpPower)
+    end
+end
+
+-- Connect the speed slider to adjust the player's speed
+speedSlider.MouseButton1Down:Connect(function()
+    speedSlider.MouseMoved:Connect(function()
+        local mouse = game.Players.LocalPlayer:GetMouse()
+        local offset = mouse.X - speedSlider.AbsolutePosition.X
+        local value = math.clamp(offset / speedSlider.AbsoluteSize.X, 0, 1) * 500
+        adjustSpeed(value)
+    end)
+end)
+
+-- Connect the jump slider to adjust the player's jump power
+jumpSlider.MouseButton1Down:Connect(function()
+    jumpSlider.MouseMoved:Connect(function()
+        local mouse = game.Players.LocalPlayer:GetMouse()
+        local offset = mouse.X - jumpSlider.AbsolutePosition.X
+        local value = math.clamp(offset / jumpSlider.AbsoluteSize.X, 0, 1) * 500
+        adjustJumpPower(value)
+    end)
+end)
+
+-- Function to execute the loadstring
+local function executeLoadstring()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/FiloClient/Filo-for-Robeats/main/Autobot",true))();
+end
+
+-- Connect the function to the execute button's MouseButton1Click event
+executeButton.MouseButton1Click:Connect(executeLoadstring)
