@@ -1,0 +1,40 @@
+local pcLoadstring = "loadstring1"
+local mobileLoadstring = "loadstring2"
+
+local selectionGui = Instance.new("ScreenGui")
+selectionGui.Name = "SelectionGui"
+selectionGui.Parent = game.CoreGui
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 300, 0, 200)
+frame.Position = UDim2.new(0.5, -150, 0.5, -100)
+frame.BackgroundColor3 = Color3.fromRGB(0, 28, 230)
+frame.Parent = selectionGui
+
+local pcButton = Instance.new("TextButton")
+pcButton.Size = UDim2.new(0, 280, 0, 80)
+pcButton.Position = UDim2.new(0, 10, 0, 20)
+pcButton.Text = "PC"
+pcButton.Parent = frame
+
+local mobileButton = Instance.new("TextButton")
+mobileButton.Size = UDim2.new(0, 280, 0, 80)
+mobileButton.Position = UDim2.new(0, 10, 0, 110)
+mobileButton.Text = "Mobile"
+mobileButton.Parent = frame
+
+local function executeLoadstring(loadstringCode)
+    local success, result = pcall(function() return loadstring(loadstringCode)() end)
+    if not success then
+        warn("Error executing loadstring:", result)
+    end
+    selectionGui:Destroy()
+end
+
+pcButton.MouseButton1Click:Connect(function()
+    executeLoadstring(pcLoadstring)
+end)
+
+mobileButton.MouseButton1Click:Connect(function()
+    executeLoadstring(mobileLoadstring)
+end)
