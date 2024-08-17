@@ -1,0 +1,80 @@
+local Filo_Gui = Instance.new("ScreenGui")
+local MainGui = Instance.new("Frame")
+local intro_txt = Instance.new("TextBox")
+local RoBeats_Autoplay = Instance.new("TextButton")
+local FiloButton = Instance.new("TextButton")
+
+
+Filo_Gui.Name = "Filo_Gui"
+Filo_Gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Filo_Gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+MainGui.Name = "MainGui"
+MainGui.Parent = Filo_Gui
+MainGui.BackgroundColor3 = Color3.fromRGB(11, 20, 181)
+MainGui.BackgroundTransparency = 0.700
+MainGui.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainGui.BorderSizePixel = 0
+MainGui.Position = UDim2.new(0.240776703, 0, 0.125313282, 0)
+MainGui.Size = UDim2.new(0, 800, 0, 524)
+
+intro_txt.Name = "intro_txt"
+intro_txt.Parent = MainGui
+intro_txt.BackgroundColor3 = Color3.fromRGB(175, 5, 8)
+intro_txt.BackgroundTransparency = 0.700
+intro_txt.BorderColor3 = Color3.fromRGB(0, 0, 0)
+intro_txt.BorderSizePixel = 0
+intro_txt.Size = UDim2.new(0, 800, 0, 51)
+intro_txt.Font = Enum.Font.Unknown
+intro_txt.Text = "Filo Gui V1"
+intro_txt.TextColor3 = Color3.fromRGB(0, 0, 0)
+intro_txt.TextSize = 25.000
+
+RoBeats_Autoplay.Name = "RoBeats_Autoplay"
+RoBeats_Autoplay.Parent = MainGui
+RoBeats_Autoplay.BackgroundColor3 = Color3.fromRGB(11, 20, 181)
+RoBeats_Autoplay.BackgroundTransparency = 0.500
+RoBeats_Autoplay.BorderColor3 = Color3.fromRGB(0, 0, 0)
+RoBeats_Autoplay.BorderSizePixel = 0
+RoBeats_Autoplay.Position = UDim2.new(0, 0, 0.0973282456, 0)
+RoBeats_Autoplay.Size = UDim2.new(0, 200, 0, 50)
+RoBeats_Autoplay.Font = Enum.Font.SourceSans
+RoBeats_Autoplay.Text = "RoBeats Autoplay"
+RoBeats_Autoplay.TextColor3 = Color3.fromRGB(0, 0, 0)
+RoBeats_Autoplay.TextSize = 14.000
+
+FiloButton.Name = "FiloButton"
+FiloButton.Parent = Filo_Gui
+FiloButton.BackgroundColor3 = Color3.fromRGB(86, 6, 156)
+FiloButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+FiloButton.BorderSizePixel = 0
+FiloButton.Position = UDim2.new(0.941747546, 0, 0.176691726, 0)
+FiloButton.Size = UDim2.new(0, 90, 0, 30)
+FiloButton.Font = Enum.Font.Unknown
+FiloButton.LineHeight = 2.000
+FiloButton.Text = "Filo"
+FiloButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+FiloButton.TextSize = 14.000
+
+local function SYUDOR_fake_script()
+	local script = Instance.new('LocalScript', RoBeats_Autoplay)
+
+	RoBeats_Autoplay.MouseButton1Click:Connect(function()
+	
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/FiloClient/Filo-for-Robeats/main/Autobot",true))();
+	
+	end)
+end
+coroutine.wrap(SYUDOR_fake_script)()
+local function TZLIAR_fake_script()
+	local script = Instance.new('LocalScript', Filo_Gui)
+
+	local FiloGui = script.Parent
+	local Frame = FiloGui:WaitForChild("MainGui")
+	local Button = FiloGui:WaitForChild("FiloButton")
+	
+	Button.MouseButton1Up:Connect(function()
+		Frame.Visible = not Frame.Visible
+	end)
+end
+coroutine.wrap(TZLIAR_fake_script)()
