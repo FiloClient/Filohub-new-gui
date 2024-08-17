@@ -1,7 +1,9 @@
 local Filo_Gui = Instance.new("ScreenGui")
 local MainGui = Instance.new("Frame")
-local intro_txt = Instance.new("TextBox")
 local RoBeats_Autoplay = Instance.new("TextButton")
+local Dex_tools = Instance.new("TextButton")
+local FiloV2_Label = Instance.new("Frame")
+local FiloV2Text = Instance.new("TextBox")
 local FiloButton = Instance.new("TextButton")
 
 Filo_Gui.Name = "Filo_Gui"
@@ -14,22 +16,8 @@ MainGui.BackgroundColor3 = Color3.fromRGB(11, 20, 181)
 MainGui.BackgroundTransparency = 0.700
 MainGui.BorderColor3 = Color3.fromRGB(0, 0, 0)
 MainGui.BorderSizePixel = 0
-MainGui.Position = UDim2.new(0.181063324, 0, 0.171679199, 0)
+MainGui.Position = UDim2.new(0.121400528, 0, 0.107769422, 0)
 MainGui.Size = UDim2.new(0, 800, 0, 524)
-MainGui.Visible = false
-
-intro_txt.Name = "intro_txt"
-intro_txt.Parent = MainGui
-intro_txt.BackgroundColor3 = Color3.fromRGB(175, 5, 8)
-intro_txt.BackgroundTransparency = 0.700
-intro_txt.BorderColor3 = Color3.fromRGB(0, 0, 0)
-intro_txt.BorderSizePixel = 0
-intro_txt.Size = UDim2.new(0, 800, 0, 51)
-intro_txt.ClearTextOnFocus = false
-intro_txt.Font = Enum.Font.Unknown
-intro_txt.Text = "Filo Gui V2"
-intro_txt.TextColor3 = Color3.fromRGB(0, 0, 0)
-intro_txt.TextSize = 25.000
 
 RoBeats_Autoplay.Name = "RoBeats_Autoplay"
 RoBeats_Autoplay.Parent = MainGui
@@ -44,6 +32,40 @@ RoBeats_Autoplay.Text = "RoBeats Autoplay"
 RoBeats_Autoplay.TextColor3 = Color3.fromRGB(0, 0, 0)
 RoBeats_Autoplay.TextSize = 14.000
 
+Dex_tools.Name = "Dex_tools"
+Dex_tools.Parent = MainGui
+Dex_tools.BackgroundColor3 = Color3.fromRGB(11, 20, 181)
+Dex_tools.BackgroundTransparency = 0.500
+Dex_tools.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Dex_tools.BorderSizePixel = 0
+Dex_tools.Position = UDim2.new(0.75, 0, 0.0973282456, 0)
+Dex_tools.Size = UDim2.new(0, 200, 0, 50)
+Dex_tools.Font = Enum.Font.SourceSans
+Dex_tools.Text = "Dex tools"
+Dex_tools.TextColor3 = Color3.fromRGB(0, 0, 0)
+Dex_tools.TextSize = 14.000
+
+FiloV2_Label.Name = "FiloV2_Label"
+FiloV2_Label.Parent = MainGui
+FiloV2_Label.BackgroundColor3 = Color3.fromRGB(175, 5, 8)
+FiloV2_Label.BackgroundTransparency = 0.500
+FiloV2_Label.BorderColor3 = Color3.fromRGB(0, 0, 0)
+FiloV2_Label.BorderSizePixel = 0
+FiloV2_Label.Size = UDim2.new(0, 800, 0, 51)
+
+FiloV2Text.Name = "FiloV2Text"
+FiloV2Text.Parent = FiloV2_Label
+FiloV2Text.BackgroundColor3 = Color3.fromRGB(175, 5, 8)
+FiloV2Text.BackgroundTransparency = 5.000
+FiloV2Text.BorderColor3 = Color3.fromRGB(0, 0, 0)
+FiloV2Text.BorderSizePixel = 0
+FiloV2Text.Position = UDim2.new(0.375, 0, 0.0196078438, 0)
+FiloV2Text.Size = UDim2.new(0, 200, 0, 50)
+FiloV2Text.Font = Enum.Font.Unknown
+FiloV2Text.Text = "Filo V2"
+FiloV2Text.TextColor3 = Color3.fromRGB(0, 0, 0)
+FiloV2Text.TextSize = 22.000
+
 FiloButton.Name = "FiloButton"
 FiloButton.Parent = Filo_Gui
 FiloButton.BackgroundColor3 = Color3.fromRGB(86, 6, 156)
@@ -57,7 +79,7 @@ FiloButton.Text = "Filo"
 FiloButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 FiloButton.TextSize = 14.000
 
-local function LIYKE_fake_script()
+local function GSFGC_fake_script()
 	local script = Instance.new('LocalScript', RoBeats_Autoplay)
 
 	RoBeats_Autoplay.MouseButton1Click:Connect(function()
@@ -66,8 +88,18 @@ local function LIYKE_fake_script()
 	
 	end)
 end
-coroutine.wrap(LIYKE_fake_script)()
-local function HDDJGOY_fake_script()
+coroutine.wrap(GSFGC_fake_script)()
+local function VYEK_fake_script()
+	local script = Instance.new('LocalScript', Dex_tools)
+
+	Dex_tools.MouseButton1Click:Connect(function()
+	
+		loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Dex%20Explorer.txt"))()
+	
+	end)
+end
+coroutine.wrap(VYEK_fake_script)()
+local function TYNOQIM_fake_script()
 	local script = Instance.new('LocalScript', Filo_Gui)
 
 	local FiloGui = script.Parent
@@ -78,4 +110,4 @@ local function HDDJGOY_fake_script()
 		Frame.Visible = not Frame.Visible
 	end)
 end
-coroutine.wrap(HDDJGOY_fake_script)()
+coroutine.wrap(TYNOQIM_fake_script)()
