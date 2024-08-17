@@ -4,7 +4,7 @@ local RoBeats_Autoplay = Instance.new("TextButton")
 local Dex_tools = Instance.new("TextButton")
 local FiloV2_Label = Instance.new("Frame")
 local FiloV2Text = Instance.new("TextBox")
-local _2D_ESP = Instance.new("TextButton")
+local ESP = Instance.new("TextButton")
 local FiloButton = Instance.new("TextButton")
 
 Filo_Gui.Name = "Filo_Gui"
@@ -67,18 +67,18 @@ FiloV2Text.Text = "Filo V2"
 FiloV2Text.TextColor3 = Color3.fromRGB(0, 0, 0)
 FiloV2Text.TextSize = 22.000
 
-_2D_ESP.Name = "2D_ESP"
-_2D_ESP.Parent = MainGui
-_2D_ESP.BackgroundColor3 = Color3.fromRGB(11, 20, 181)
-_2D_ESP.BackgroundTransparency = 0.500
-_2D_ESP.BorderColor3 = Color3.fromRGB(0, 0, 0)
-_2D_ESP.BorderSizePixel = 0
-_2D_ESP.Position = UDim2.new(0, 0, 0.192748085, 0)
-_2D_ESP.Size = UDim2.new(0, 200, 0, 50)
-_2D_ESP.Font = Enum.Font.SourceSans
-_2D_ESP.Text = "2D ESP"
-_2D_ESP.TextColor3 = Color3.fromRGB(0, 0, 0)
-_2D_ESP.TextSize = 14.000
+ESP.Name = "ESP"
+ESP.Parent = MainGui
+ESP.BackgroundColor3 = Color3.fromRGB(11, 20, 181)
+ESP.BackgroundTransparency = 0.500
+ESP.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ESP.BorderSizePixel = 0
+ESP.Position = UDim2.new(0, 0, 0.192748085, 0)
+ESP.Size = UDim2.new(0, 200, 0, 50)
+ESP.Font = Enum.Font.SourceSans
+ESP.Text = "2D ESP"
+ESP.TextColor3 = Color3.fromRGB(0, 0, 0)
+ESP.TextSize = 14.000
 
 FiloButton.Name = "FiloButton"
 FiloButton.Parent = Filo_Gui
@@ -93,7 +93,7 @@ FiloButton.Text = "Filo"
 FiloButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 FiloButton.TextSize = 14.000
 
-local function VETUXO_fake_script()
+local function DRYA_fake_script()
 	local script = Instance.new('LocalScript', RoBeats_Autoplay)
 
 	RoBeats_Autoplay.MouseButton1Click:Connect(function()
@@ -102,8 +102,8 @@ local function VETUXO_fake_script()
 	
 	end)
 end
-coroutine.wrap(VETUXO_fake_script)()
-local function UTYC_fake_script()
+coroutine.wrap(DRYA_fake_script)()
+local function MASHJGJ_fake_script()
 	local script = Instance.new('LocalScript', Dex_tools)
 
 	Dex_tools.MouseButton1Click:Connect(function()
@@ -112,11 +112,11 @@ local function UTYC_fake_script()
 	
 	end)
 end
-coroutine.wrap(UTYC_fake_script)()
-local function UOVL_fake_script()
-	local script = Instance.new('LocalScript', _2D_ESP)
+coroutine.wrap(MASHJGJ_fake_script)()
+local function JJEL_fake_script()
+	local script = Instance.new('LocalScript', ESP)
 
-	2D_ESP.MouseButton1Click:Connect(function()
+	ESP.MouseButton1Click:Connect(function()
 	
 		local Player = game:GetService("Players").LocalPlayer
 		local Camera = game:GetService("Workspace").CurrentCamera
@@ -227,8 +227,8 @@ local function UOVL_fake_script()
 	
 	end)
 end
-coroutine.wrap(UOVL_fake_script)()
-local function XLGZVQO_fake_script()
+coroutine.wrap(JJEL_fake_script)()
+local function TOJAY_fake_script()
 	local script = Instance.new('LocalScript', Filo_Gui)
 
 	local FiloGui = script.Parent
@@ -239,4 +239,4 @@ local function XLGZVQO_fake_script()
 		Frame.Visible = not Frame.Visible
 	end)
 end
-coroutine.wrap(XLGZVQO_fake_script)()
+coroutine.wrap(TOJAY_fake_script)()
