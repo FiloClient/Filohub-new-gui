@@ -16,6 +16,7 @@ MainGui.BorderColor3 = Color3.fromRGB(0, 0, 0)
 MainGui.BorderSizePixel = 0
 MainGui.Position = UDim2.new(0.181063324, 0, 0.171679199, 0)
 MainGui.Size = UDim2.new(0, 800, 0, 524)
+MainGui.Visible = false
 
 intro_txt.Name = "intro_txt"
 intro_txt.Parent = MainGui
@@ -56,7 +57,7 @@ FiloButton.Text = "Filo"
 FiloButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 FiloButton.TextSize = 14.000
 
-local function ZGYKYZ_fake_script()
+local function LIYKE_fake_script()
 	local script = Instance.new('LocalScript', RoBeats_Autoplay)
 
 	RoBeats_Autoplay.MouseButton1Click:Connect(function()
@@ -65,8 +66,8 @@ local function ZGYKYZ_fake_script()
 	
 	end)
 end
-coroutine.wrap(ZGYKYZ_fake_script)()
-local function TFHO_fake_script()
+coroutine.wrap(LIYKE_fake_script)()
+local function HDDJGOY_fake_script()
 	local script = Instance.new('LocalScript', Filo_Gui)
 
 	local FiloGui = script.Parent
@@ -77,4 +78,4 @@ local function TFHO_fake_script()
 		Frame.Visible = not Frame.Visible
 	end)
 end
-coroutine.wrap(TFHO_fake_script)()
+coroutine.wrap(HDDJGOY_fake_script)()
