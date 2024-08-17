@@ -4,7 +4,6 @@ local intro_txt = Instance.new("TextBox")
 local RoBeats_Autoplay = Instance.new("TextButton")
 local FiloButton = Instance.new("TextButton")
 
-
 Filo_Gui.Name = "Filo_Gui"
 Filo_Gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 Filo_Gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -15,7 +14,7 @@ MainGui.BackgroundColor3 = Color3.fromRGB(11, 20, 181)
 MainGui.BackgroundTransparency = 0.700
 MainGui.BorderColor3 = Color3.fromRGB(0, 0, 0)
 MainGui.BorderSizePixel = 0
-MainGui.Position = UDim2.new(0.240776703, 0, 0.125313282, 0)
+MainGui.Position = UDim2.new(0.181063324, 0, 0.171679199, 0)
 MainGui.Size = UDim2.new(0, 800, 0, 524)
 
 intro_txt.Name = "intro_txt"
@@ -25,8 +24,9 @@ intro_txt.BackgroundTransparency = 0.700
 intro_txt.BorderColor3 = Color3.fromRGB(0, 0, 0)
 intro_txt.BorderSizePixel = 0
 intro_txt.Size = UDim2.new(0, 800, 0, 51)
+intro_txt.ClearTextOnFocus = false
 intro_txt.Font = Enum.Font.Unknown
-intro_txt.Text = "Filo Gui V1"
+intro_txt.Text = "Filo Gui V2"
 intro_txt.TextColor3 = Color3.fromRGB(0, 0, 0)
 intro_txt.TextSize = 25.000
 
@@ -48,7 +48,7 @@ FiloButton.Parent = Filo_Gui
 FiloButton.BackgroundColor3 = Color3.fromRGB(86, 6, 156)
 FiloButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 FiloButton.BorderSizePixel = 0
-FiloButton.Position = UDim2.new(0.941747546, 0, 0.176691726, 0)
+FiloButton.Position = UDim2.new(0.928212523, 0, 0.184210524, 0)
 FiloButton.Size = UDim2.new(0, 90, 0, 30)
 FiloButton.Font = Enum.Font.Unknown
 FiloButton.LineHeight = 2.000
@@ -56,7 +56,7 @@ FiloButton.Text = "Filo"
 FiloButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 FiloButton.TextSize = 14.000
 
-local function SYUDOR_fake_script()
+local function ZGYKYZ_fake_script()
 	local script = Instance.new('LocalScript', RoBeats_Autoplay)
 
 	RoBeats_Autoplay.MouseButton1Click:Connect(function()
@@ -65,8 +65,8 @@ local function SYUDOR_fake_script()
 	
 	end)
 end
-coroutine.wrap(SYUDOR_fake_script)()
-local function TZLIAR_fake_script()
+coroutine.wrap(ZGYKYZ_fake_script)()
+local function TFHO_fake_script()
 	local script = Instance.new('LocalScript', Filo_Gui)
 
 	local FiloGui = script.Parent
@@ -77,4 +77,4 @@ local function TZLIAR_fake_script()
 		Frame.Visible = not Frame.Visible
 	end)
 end
-coroutine.wrap(TZLIAR_fake_script)()
+coroutine.wrap(TFHO_fake_script)()
